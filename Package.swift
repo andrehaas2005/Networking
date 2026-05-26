@@ -14,7 +14,10 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(path: "../Core")
+      .package(
+          url: "https://github.com/andrehaas2005/Core.git",
+          branch: "main"
+      )
     ],
     targets: [
         .target(

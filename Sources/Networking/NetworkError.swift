@@ -1,6 +1,7 @@
 import Foundation
 
-public enum NetworkError: Error {
+public enum NetworkError: Error, Equatable {
+   
   case invalidURL
   case requestFailed(Error)
   case decodingFailed(Error)
@@ -21,6 +22,9 @@ public enum NetworkError: Error {
       errorMessage = "Erro de rede. Tente novamente."
     }
     return errorMessage
+  }
+  public static func == (lhs: NetworkError, rhs: NetworkError) -> Bool {
+    lhs.descript() == rhs.descript()
   }
 }
 

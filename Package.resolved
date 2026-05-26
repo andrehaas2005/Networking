@@ -1,0 +1,15 @@
+{
+  "originHash" : "eee7b59e33bc5c4269bd27d78d07a568eb77b5cfb99650f09cfe9067c2df85f6",
+  "pins" : [
+    {
+      "identity" : "core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/andrehaas2005/Core.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "ff576bf896e05634deae92cff2bef9211040607c"
+      }
+    }
+  ],
+  "version" : 3
+}

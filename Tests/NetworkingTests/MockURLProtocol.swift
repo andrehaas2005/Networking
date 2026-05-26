@@ -1,27 +1,26 @@
 import Foundation
-
+struct  ResponseCallback {
+  let data: Data
+  let statusCode: Int
+}
 final class MockURLProtocol: URLProtocol {
 
-    static var mockResponse: (data: Data, statusCode: Int)?
+   public var mockResponse: ResponseCallback = ResponseCallback(data: Data(), statusCode: 400)
 
     override class func canInit(with request: URLRequest) -> Bool { true }
     override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
 
     override func startLoading() {
-        guard let mock = Self.mockResponse else {
-            client?.urlProtocol(self, didFailWithError: URLError(.badServerResponse))
-            return
-        }
-
+      
         let response = HTTPURLResponse(
             url: request.url!,
-            statusCode: mock.statusCode,
+            statusCode: mockResponse.statusCode,
             httpVersion: nil,
             headerFields: nil
         )!
 
         client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
-        client?.urlProtocol(self, didLoad: mock.data)
+        client?.urlProtocol(self, didLoad: mockResponse.data)
         client?.urlProtocolDidFinishLoading(self)
     }
 
