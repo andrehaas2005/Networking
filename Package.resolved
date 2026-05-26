@@ -1,5 +1,5 @@
 {
-  "originHash" : "eee7b59e33bc5c4269bd27d78d07a568eb77b5cfb99650f09cfe9067c2df85f6",
+  "originHash" : "625461478dbb9246ba5ebd68218cbacee4791cb8b9f784d2051785cd6fb42d7c",
   "pins" : [
     {
       "identity" : "core",
@@ -7,7 +7,7 @@
       "location" : "https://github.com/andrehaas2005/Core.git",
       "state" : {
         "branch" : "main",
-        "revision" : "ff576bf896e05634deae92cff2bef9211040607c"
+        "revision" : "6cc9cb84aadcf2d3c7309b07219f02a549656b8d"
       }
     }
   ],
